@@ -2,15 +2,40 @@ import { useReducer, useState } from 'react'
 
 import './App.css'
 
-import Header from "./Components/Header"; 
 
+export default function App() {
+  const [tasks, dispatch] = useReducer(taskReducer, initialTask);
 
+  function handleAdd (titles) {
+    dispatch(
+      {
+        type: "added",
+        userId: 1,
+        id: 1,
+        title: title,
+      });
+  }
 
-function App() {
+  function handleEdit (task) {
+    dispatch({
+      type: "added",
+      userId: 1,
+      id: 1,
+      title: title,
+    });
+  }
+
+  function handleDeleted(id) {
+    dispatch({
+      type: "deleted",
+      userId: 1, 
+      id: id,
+    });
+  }
 
   return (
     <>
-      <Header/>
+      <h1>Do You Have Anything You Should Be Doing Now?</h1>
     </>
   )
 };
@@ -31,4 +56,3 @@ const initialState = [
   }
 ];
 
-export default App
