@@ -1,4 +1,4 @@
-function workReducer(tasks, action) {
+export default function workReducer(tasks, action) {
     switch (action.type) {
         case "add!": {
             return [

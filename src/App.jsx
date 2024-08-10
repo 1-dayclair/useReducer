@@ -1,10 +1,11 @@
 import { useReducer, useState } from 'react'
 
 import './App.css'
+import workReducer from './Components/WorkReducer';
 
 
 export default function App() {
-  const [tasks, dispatch] = useReducer(taskReducer, initialTask);
+  const [tasks, dispatch] = useReducer(workReducer, initialTask);
 
   function handleAdd (titles) {
     dispatch(
@@ -41,7 +42,7 @@ export default function App() {
 };
 
 
-const initialState = [
+const initialTask = [
   {
     "userId": 1,
     "id": 1,
