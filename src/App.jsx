@@ -2,6 +2,7 @@ import { useReducer, useState } from 'react'
 
 import './App.css'
 import workReducer from './Components/WorkReducer';
+import Task from './Components/Task';
 
 
 export default function App() {
@@ -36,7 +37,15 @@ export default function App() {
 
   return (
     <>
-      <h1>Do You Have Anything You Should Be Doing Now?</h1>
+      <h1 style={{color: 'red', backgroundColor: 'black' }} >Do You Have Anything You Should Be Doing Now?</h1>
+      <form>
+        <label>
+        <input type="text"/>
+        </label>
+      <button style={{backgroundColor: 'black', color: 'white' }} >Add New!</button>
+      </form>
+      <h2 style={{ color: 'seagreen'}}>Make it Happen?</h2>
+      <Task/>
     </>
   )
 };

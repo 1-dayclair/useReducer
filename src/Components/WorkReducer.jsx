@@ -1,6 +1,6 @@
 export default function workReducer(tasks, action) {
     switch (action.type) {
-        case "add!": {
+        case "new!": {
             return [
                 ...tasks,
                 {
@@ -11,7 +11,7 @@ export default function workReducer(tasks, action) {
                 },
             ];
         }
-        case "changed!": {
+        case "edit!": {
             return tasks.map((x) => {
                 if (x.id === action.task.id) {
                     return action.task;
