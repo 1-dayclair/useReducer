@@ -4,7 +4,6 @@ export default function workReducer(tasks, action) {
             return [
                 ...tasks,
                 {
-                    userId: action.userId,
                     id: action.id,
                     title: action.title,
                     completed: false,

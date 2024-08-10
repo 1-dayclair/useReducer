@@ -7,21 +7,22 @@ import Task from './Components/Task';
 
 export default function App() {
   const [tasks, dispatch] = useReducer(workReducer, initialTask);
+  const [brandNew, setBrandNew] = useState("");
 
-  function handleAdd (titles) {
+  function handleAdd (e, title) {
+    e.preventDefault();
     dispatch(
       {
-        type: "added",
-        userId: 1,
+        type: "new!",
         id: 1,
         title: title,
       });
+      setBrandNew("");
   }
 
   function handleEdit (task) {
     dispatch({
       type: "added",
-      userId: 1,
       id: 1,
       title: title,
     });
@@ -29,8 +30,7 @@ export default function App() {
 
   function handleDeleted(id) {
     dispatch({
-      type: "deleted",
-      userId: 1, 
+      type: "deleted", 
       id: id,
     });
   }
@@ -38,14 +38,23 @@ export default function App() {
   return (
     <>
       <h1 style={{color: 'red', backgroundColor: 'black' }} >Do You Have Anything You Should Be Doing Now?</h1>
-      <form>
+      <h3 style={{fontStyle: 'italic'}} > To Do List </h3>
+      <form onSubmit={handleAdd}>
         <label>
-        <input type="text"/>
+        <input type="text" value={brandNew} onChange={(e) => setBrandNew(e.target.value)} />
         </label>
       <button style={{backgroundColor: 'black', color: 'white' }} >Add New!</button>
       </form>
       <h2 style={{ color: 'seagreen'}}>Make it Happen?</h2>
-      <Task/>
+      {tasks.map((toDo) => (
+        <Task 
+          key={toDo.id}
+          id={toDo.id}
+          title={toDo.title}
+          completed={toDo.completed}
+        />
+      ))}
+      
     </>
   )
 };
@@ -55,13 +64,13 @@ const initialTask = [
   {
     "userId": 1,
     "id": 1,
-    "title": "delectus aut autem",
+    "title": "Do 1,000,000 jumping jacks",
     "completed": false
   },
   {
     "userId": 1,
     "id": 2,
-    "title": "quis ut nam facilis et officia qui",
+    "title": "Take the tiger meat out of the fridge",
     "completed": false
   }
 ];
