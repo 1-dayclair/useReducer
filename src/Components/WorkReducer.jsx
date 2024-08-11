@@ -4,12 +4,12 @@ export default function workReducer(tasks, action) {
     switch (action.type) {
         case "new!": {
             return [
-                ...tasks,
                 {
                     id: action.id,
                     title: action.title,
                     completed: false,
                 },
+                ...tasks
             ];
         }
         case "edit!": {
