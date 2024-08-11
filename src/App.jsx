@@ -20,7 +20,7 @@ export default function App() {
       setBrandNew("");
   }
 
-  function handleEdit (task) {
+  function handleEdit (e, task) {
     dispatch({
       type: "added",
       id: 1,
@@ -34,6 +34,8 @@ export default function App() {
       id: id,
     });
   }
+
+  
 
   return (
     <>
@@ -54,7 +56,6 @@ export default function App() {
           completed={toDo.completed}
         />
       ))}
-      
     </>
   )
 };
