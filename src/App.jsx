@@ -22,12 +22,14 @@ export default function App() {
   }
 
   function handleEdit (id, title) {
+    const update = prompt(title);
+    if (update) {
     dispatch({
       type: "edit!",
-      id: 1,
-      title: title,
+      task: { id, title: update, completed: false }
     });
   }
+}
 
   function handleDeleted(id) {
     dispatch({
@@ -77,6 +79,24 @@ const initialTask = [
     "userId": 1,
     "id": 2,
     "title": "Take the tiger meat out of the fridge",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "Develop a mask",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "Move to Tokyo, then visit Egypt, then go back to Tokyo, or maybe stay in Egypt for a while",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "Find a very nice place with very, very, very, super delicious ramen. Eat there!",
     "completed": false
   }
 ];

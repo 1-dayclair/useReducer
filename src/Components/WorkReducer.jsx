@@ -14,8 +14,8 @@ export default function workReducer(tasks, action) {
         }
         case "edit!": {
             return tasks.map((x) => {
-                if (x.id === action.tasks) {
-                    return action.tasks;
+                if (x.id === action.task.id) {
+                    return { ...x, title: action.task.title }; 
                 } else {
                     return x;
                 }

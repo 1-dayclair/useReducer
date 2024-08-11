@@ -2,7 +2,7 @@ import App from "../App"
 import workReducer from "./WorkReducer"
 
 
-export default function Task({id, title, completed, handleEdit, handleDeleted, tasks}) {
+export default function Task({id, title, completed, handleEdit, handleDeleted}) {
     return (
         <>
             <ul>
@@ -11,7 +11,7 @@ export default function Task({id, title, completed, handleEdit, handleDeleted, t
                     <input type="checkbox" checked={completed} readOnly />
                     ... {title}
                 </label>
-                <button onClick={() => handleDeleted(id)}>Delete!</button> <button onClick={() => handleEdit(id, tasks)} style={{backgroundColor: "yellow"}} > Edit! </button>
+                <button onClick={() => handleDeleted(id)}>Delete!</button> <button onClick={() => handleEdit(id, title)} style={{backgroundColor: "yellow"}} > Edit! </button>
                 </li>
             </ul>
         </>
