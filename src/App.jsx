@@ -23,7 +23,7 @@ export default function App() {
 
   function handleEdit (id, title) {
     dispatch({
-      type: "added",
+      type: "edit!",
       id: 1,
       title: title,
     });
