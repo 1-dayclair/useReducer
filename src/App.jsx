@@ -9,18 +9,19 @@ export default function App() {
   const [tasks, dispatch] = useReducer(workReducer, initialTask);
   const [brandNew, setBrandNew] = useState("");
 
+  // Functions for handling actions happening inside application
   function handleAdd (e, title) {
     e.preventDefault();
     dispatch(
       {
         type: "new!",
-        id: 1,
-        title: title,
+        id: Date.now(),
+        title: brandNew,
       });
       setBrandNew("");
   }
 
-  function handleEdit (e, task) {
+  function handleEdit (id, title) {
     dispatch({
       type: "added",
       id: 1,
@@ -34,9 +35,10 @@ export default function App() {
       id: id,
     });
   }
+  // Functions for handling actions happening inside application^^
 
   
-
+// User screen
   return (
     <>
       <h1 style={{color: 'red', backgroundColor: 'black' }} >Do You Have Anything You Should Be Doing Now?</h1>
@@ -54,11 +56,14 @@ export default function App() {
           id={toDo.id}
           title={toDo.title}
           completed={toDo.completed}
+          handleEdit={handleEdit}
+          handleDeleted={handleDeleted}
         />
       ))}
     </>
   )
 };
+// User screen^^
 
 
 const initialTask = [

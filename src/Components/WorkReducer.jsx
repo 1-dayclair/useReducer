@@ -1,3 +1,5 @@
+
+// Switches and logic for handling actions
 export default function workReducer(tasks, action) {
     switch (action.type) {
         case "new!": {
@@ -27,4 +29,5 @@ export default function workReducer(tasks, action) {
         }
     }
 }
+// Switches and logic for handling actions^^
 
