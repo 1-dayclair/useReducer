@@ -8,7 +8,7 @@ export default function Task({id, title, completed, handleEdit, handleDeleted}) 
             <ul>
                 <li>
                 <label>
-                    <input type="checkbox" checked={completed} readOnly />
+                    <input type="checkbox" checked={completed} />
                     ... {title}
                 </label>
                 <button onClick={() => handleDeleted(id)}>Delete!</button> <button onClick={() => handleEdit(id, title)} style={{backgroundColor: "yellow"}} > Edit! </button>
@@ -17,3 +17,4 @@ export default function Task({id, title, completed, handleEdit, handleDeleted}) 
         </>
     )
 }
+// JSX for actual task list section, plus button, two, along with checkboxes^^

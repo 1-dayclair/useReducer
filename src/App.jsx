@@ -15,10 +15,12 @@ export default function App() {
     dispatch(
       {
         type: "new!",
-        id: Date.now(),
+        id: Date.now(), 
+        // A way to give a new id^^
         title: brandNew,
       });
       setBrandNew("");
+      // Empties field for another input (another task)^^
   }
 
   function handleEdit (id, title) {
