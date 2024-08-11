@@ -75,7 +75,7 @@ const initialTask = [
     "userId": 1,
     "id": 1,
     "title": "Do 1,000,000 jumping jacks",
-    "completed": false
+    "completed": true
   },
   {
     "userId": 1,
