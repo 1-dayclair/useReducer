@@ -31,7 +31,7 @@ export default function App() {
 
   function handleDeleted(id) {
     dispatch({
-      type: "deleted", 
+      type: "delete!", 
       id: id,
     });
   }
